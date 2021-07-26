@@ -168,6 +168,222 @@ Z_DUMMY_TARGET/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/build
 .PHONY : Z_DUMMY_TARGET/fast
 
+.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.obj: .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.obj
+
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.obj
+
+# target to build an object file
+.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.obj
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.obj
+
+.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.i: .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.i
+
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.i
+
+# target to preprocess a source file
+.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.i
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.i
+
+.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.s: .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.s
+
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.s
+
+# target to generate assembly for a file
+.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.s
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.s
+
+.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.obj: .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.obj
+
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.obj
+
+# target to build an object file
+.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.obj
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.obj
+
+.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.i: .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.i
+
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.i
+
+# target to preprocess a source file
+.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.i
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.i
+
+.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.s: .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.s
+
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.s
+
+# target to generate assembly for a file
+.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.s
+.PHONY : .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.s
+
+.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.obj: .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.obj
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.obj
+
+# target to build an object file
+.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.obj
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.obj
+
+.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.i: .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.i
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.i
+
+# target to preprocess a source file
+.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.i
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.i
+
+.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.s: .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.s
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.s
+
+# target to generate assembly for a file
+.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.s
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.s
+
+.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.obj: .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.obj
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.obj
+
+# target to build an object file
+.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.obj
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.obj
+
+.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.i: .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.i
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.i
+
+# target to preprocess a source file
+.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.i
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.i
+
+.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.s: .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.s
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.s
+
+# target to generate assembly for a file
+.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.s
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.s
+
+.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.obj: .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.obj
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.obj
+
+# target to build an object file
+.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.obj
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.obj
+
+.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.i: .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.i
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.i
+
+# target to preprocess a source file
+.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.i
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.i
+
+.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.s: .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.s
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.s
+
+# target to generate assembly for a file
+.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.s
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.s
+
+.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.obj: .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.obj
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.obj
+
+# target to build an object file
+.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.obj
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.obj
+
+.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.i: .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.i
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.i
+
+# target to preprocess a source file
+.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.i
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.i
+
+.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.s: .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.s
+
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.s
+
+# target to generate assembly for a file
+.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.s
+.PHONY : .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.s
+
+src/DHT22.obj: src/DHT22.cpp.obj
+
+.PHONY : src/DHT22.obj
+
+# target to build an object file
+src/DHT22.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.obj
+.PHONY : src/DHT22.cpp.obj
+
+src/DHT22.i: src/DHT22.cpp.i
+
+.PHONY : src/DHT22.i
+
+# target to preprocess a source file
+src/DHT22.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.i
+.PHONY : src/DHT22.cpp.i
+
+src/DHT22.s: src/DHT22.cpp.s
+
+.PHONY : src/DHT22.s
+
+# target to generate assembly for a file
+src/DHT22.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.s
+.PHONY : src/DHT22.cpp.s
+
+src/StopWatchMicros.obj: src/StopWatchMicros.cpp.obj
+
+.PHONY : src/StopWatchMicros.obj
+
+# target to build an object file
+src/StopWatchMicros.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.obj
+.PHONY : src/StopWatchMicros.cpp.obj
+
+src/StopWatchMicros.i: src/StopWatchMicros.cpp.i
+
+.PHONY : src/StopWatchMicros.i
+
+# target to preprocess a source file
+src/StopWatchMicros.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.i
+.PHONY : src/StopWatchMicros.cpp.i
+
+src/StopWatchMicros.s: src/StopWatchMicros.cpp.s
+
+.PHONY : src/StopWatchMicros.s
+
+# target to generate assembly for a file
+src/StopWatchMicros.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.s
+.PHONY : src/StopWatchMicros.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -206,6 +422,30 @@ help:
 	@echo ... Debug
 	@echo ... Production
 	@echo ... Z_DUMMY_TARGET
+	@echo ... .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.obj
+	@echo ... .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.i
+	@echo ... .pio/libdeps/uno/avr-debugger/avr8-stub/app_api.s
+	@echo ... .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.obj
+	@echo ... .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.i
+	@echo ... .pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.s
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.obj
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.i
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.s
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.obj
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.i
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.s
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.obj
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.i
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.s
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.obj
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.i
+	@echo ... .pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.s
+	@echo ... src/DHT22.obj
+	@echo ... src/DHT22.i
+	@echo ... src/DHT22.s
+	@echo ... src/StopWatchMicros.obj
+	@echo ... src/StopWatchMicros.i
+	@echo ... src/StopWatchMicros.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

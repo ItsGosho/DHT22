@@ -1,0 +1,10 @@
+#ifndef DHT22_STOPWATCHMICROS_H
+#define DHT22_STOPWATCHMICROS_H
+
+
+class StopWatchMicros {
+
+};
+
+
+#endif //DHT22_STOPWATCHMICROS_H

@@ -126,6 +126,150 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/avr8-stub/avr_debugger.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/.cproject">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/.project">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/.settings/de.innot.avreclipse.core.prefs">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink_mega Debug COM5.launch">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink_mega TCP.launch">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/.cproject">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/.project">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/.settings/de.innot.avreclipse.core.prefs">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega Debug COM5.launch">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega2560/readme.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/.cproject">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/.project">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/.settings/de.innot.avreclipse.core.prefs">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink_nano COM14.launch">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink_nano TCP.launch">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink_uno Debug COM.launch">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink_uno Debug Load.launch">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink_uno TCP.launch">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/debug_com.bat">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/debug_tcp.bat">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/gdb_logfile.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/.cproject">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/.project">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/.settings/de.innot.avreclipse.core.prefs">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/c_uno Debug COM.launch">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/examples/mega328/readme.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/library.json">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/license.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/.pio/libdeps/uno/avr-debugger/readme.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/src/DHT22.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/src/DHT22.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/src/StopWatchMicros.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/src/StopWatchMicros.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
 		<Unit filename="C:/Users/Gosho/Desktop/GitHub/DHT22/src/main.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>

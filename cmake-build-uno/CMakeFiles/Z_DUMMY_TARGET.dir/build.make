@@ -76,9 +76,35 @@ include CMakeFiles/Z_DUMMY_TARGET.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 
+CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.obj: ../src/DHT22.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.obj"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\src\DHT22.cpp.obj -c C:\Users\Gosho\Desktop\GitHub\DHT22\src\DHT22.cpp
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.i"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Gosho\Desktop\GitHub\DHT22\src\DHT22.cpp > CMakeFiles\Z_DUMMY_TARGET.dir\src\DHT22.cpp.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.s"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Gosho\Desktop\GitHub\DHT22\src\DHT22.cpp -o CMakeFiles\Z_DUMMY_TARGET.dir\src\DHT22.cpp.s
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.obj: ../src/StopWatchMicros.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.obj"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\src\StopWatchMicros.cpp.obj -c C:\Users\Gosho\Desktop\GitHub\DHT22\src\StopWatchMicros.cpp
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.i"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Gosho\Desktop\GitHub\DHT22\src\StopWatchMicros.cpp > CMakeFiles\Z_DUMMY_TARGET.dir\src\StopWatchMicros.cpp.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.s"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Gosho\Desktop\GitHub\DHT22\src\StopWatchMicros.cpp -o CMakeFiles\Z_DUMMY_TARGET.dir\src\StopWatchMicros.cpp.s
+
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\src\main.cpp.obj -c C:\Users\Gosho\Desktop\GitHub\DHT22\src\main.cpp
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.i: cmake_force
@@ -89,17 +115,111 @@ CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.s"
 	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Gosho\Desktop\GitHub\DHT22\src\main.cpp -o CMakeFiles\Z_DUMMY_TARGET.dir\src\main.cpp.s
 
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.obj: ../.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.obj"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\avr8-stub\app_api.c.obj   -c C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\avr8-stub\app_api.c
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.i"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\avr8-stub\app_api.c > CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\avr8-stub\app_api.c.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.s"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\avr8-stub\app_api.c -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\avr8-stub\app_api.c.s
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.obj: ../.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.obj"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\avr8-stub\avr8-stub.c.obj   -c C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\avr8-stub\avr8-stub.c
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.i"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\avr8-stub\avr8-stub.c > CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\avr8-stub\avr8-stub.c.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.s"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\avr8-stub\avr8-stub.c -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\avr8-stub\avr8-stub.c.s
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.obj: ../.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.obj"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega2560\blink_mega\blink.cpp.obj -c C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega2560\blink_mega\blink.cpp
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.i"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega2560\blink_mega\blink.cpp > CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega2560\blink_mega\blink.cpp.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.s"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega2560\blink_mega\blink.cpp -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega2560\blink_mega\blink.cpp.s
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.obj: ../.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.obj"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega2560\c_mega\c_mega.c.obj   -c C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega2560\c_mega\c_mega.c
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.i"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega2560\c_mega\c_mega.c > CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega2560\c_mega\c_mega.c.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.s"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega2560\c_mega\c_mega.c -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega2560\c_mega\c_mega.c.s
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.obj: ../.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.obj"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega328\blink_uno\blink.cpp.obj -c C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega328\blink_uno\blink.cpp
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.i"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega328\blink_uno\blink.cpp > CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega328\blink_uno\blink.cpp.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.s"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega328\blink_uno\blink.cpp -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega328\blink_uno\blink.cpp.s
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.obj: ../.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.obj"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega328\c_uno\main.c.obj   -c C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega328\c_uno\main.c
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.i"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega328\c_uno\main.c > CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega328\c_uno\main.c.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.s"
+	C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Gosho\Desktop\GitHub\DHT22\.pio\libdeps\uno\avr-debugger\examples\mega328\c_uno\main.c -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\uno\avr-debugger\examples\mega328\c_uno\main.c.s
+
 # Object files for target Z_DUMMY_TARGET
 Z_DUMMY_TARGET_OBJECTS = \
-"CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
+"CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.obj" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.obj"
 
 # External object files for target Z_DUMMY_TARGET
 Z_DUMMY_TARGET_EXTERNAL_OBJECTS =
 
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/DHT22.cpp.obj
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/StopWatchMicros.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/app_api.c.obj
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/avr8-stub/avr8-stub.c.obj
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/blink_mega/blink.cpp.obj
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega2560/c_mega/c_mega.c.obj
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/blink_uno/blink.cpp.obj
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/uno/avr-debugger/examples/mega328/c_uno/main.c.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/build.make
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Z_DUMMY_TARGET"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Gosho\Desktop\GitHub\DHT22\cmake-build-uno\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Z_DUMMY_TARGET"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Z_DUMMY_TARGET.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
