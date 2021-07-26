@@ -19,8 +19,11 @@ long DHT22::convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startInde
     long convertedValue = 0;
 
     for (int i = endIndex - 1; i >= startIndex; i--) {
-        T value = binaryNumbers[i];
-        convertedValue += value * (1 << exponent);
+
+        T binaryValue = binaryNumbers[i];
+        T decimalValue = binaryValue * (1 << exponent);
+
+        convertedValue += decimalValue;
         exponent++;
     }
 
