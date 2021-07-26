@@ -18,7 +18,7 @@ private:
 
 public:
 
-    unsigned long run() {
+    void run() {
 
         if (!this->isRunning) {
             this->start = micros();
@@ -46,7 +46,23 @@ bool isToleranced(unsigned long value, unsigned long expected, unsigned long tol
            (value >= expected - tolerance && value <= expected + tolerance);
 }
 
+template<typename T, size_t S>
+long convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startIndex, const long& endIndex) {
+
+    long exponent = 0;
+    long convertedValue = 0;
+
+    for (int i = endIndex - 1; i >= startIndex; i--) {
+        T value = binaryNumbers[i];
+        convertedValue += value * (1 << exponent);
+        exponent++;
+    }
+
+    return convertedValue;
+}
+
 void loop() {
+
 
     unsigned long counter[40];
     unsigned long counterIndexer = 0;
@@ -113,20 +129,27 @@ void loop() {
                 break;
         }
 
-        Serial.println();
+        for (int i = 0; i < 40; ++i) {
+            Serial.print(counter[i]);
+            Serial.print(",");
+        }
 
-        /*for (int i = 0; i < 40; i++) {
-            Serial.println(counter[i]);
-        }*/
+        Serial.println();
 
         Serial.println("Humidity:");
         for (int i = 0; i < 16; i++) {
             Serial.print(counter[i]);
         }
 
+
+        float temperature = convertBinaryToDecimal(counter, 16, 32) / 10.0;
+
         Serial.println("");
         Serial.println("Temp:");
-        for (int i = 16; i < 32; i++) {
+        Serial.println(temperature);
+        Serial.println("");
+
+        for (int i = 16; i < 32; ++i) {
             Serial.print(counter[i]);
         }
 
