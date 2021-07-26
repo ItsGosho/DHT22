@@ -106,9 +106,5 @@ DHT22Measurement DHT22::measure() {
             break;
     }
 
-    float humidity = this->convertBinaryToDecimal(bits, 0, 16) / 10.0;
-    float temperature = this->convertBinaryToDecimal(bits, 16, 32) / 10.0;
-    float checkSum = this->convertBinaryToDecimal(bits, 32, 40);
-
-    return DHT22Measurement{humidity, temperature};
+    return this->extractData(bits);
 }
