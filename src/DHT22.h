@@ -14,6 +14,11 @@ class DHT22 {
 private:
     short pin;
 
+    bool isValueValid(const unsigned long& value, const unsigned long& expected, const unsigned long& deviation);
+
+    template<typename T, size_t S>
+    long convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startIndex, const long& endIndex);
+
 public:
 
     DHT22(short pin);

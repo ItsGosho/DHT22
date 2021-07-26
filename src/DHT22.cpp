@@ -4,13 +4,16 @@ DHT22::DHT22(short pin) : pin(pin) {
 
 }
 
-bool isToleranced(unsigned long value, unsigned long expected, unsigned long tolerance) {
-    return value == expected ||
-           (value >= expected - tolerance && value <= expected + tolerance);
+bool DHT22::isValueValid(const unsigned long& value, const unsigned long& expected, const unsigned long& deviation) {
+
+    unsigned long lowestPoint = expected - deviation;
+    unsigned long upperPoint = expected + deviation;
+
+    return value >= lowestPoint && value <= upperPoint;
 }
 
 template<typename T, size_t S>
-long convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startIndex, const long& endIndex) {
+long DHT22::convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startIndex, const long& endIndex) {
 
     long exponent = 0;
     long convertedValue = 0;
@@ -65,9 +68,9 @@ DHT22Measurement DHT22::measure() {
             if (lastState == HIGH) {
 
                 unsigned long value = stopWatchMicros.stop();
-                if (isToleranced(value, 80, 20)) {
+                if (this->isValueValid(value, 80, 20)) {
                     counter[counterIndexer] = 1;
-                } else if (isToleranced(value, 27, 20)) {
+                } else if (this->isValueValid(value, 27, 20)) {
                     counter[counterIndexer] = 0;
                 } else {
                     //Unexpected error something like that :D
@@ -90,9 +93,9 @@ DHT22Measurement DHT22::measure() {
             break;
     }
 
-    float humidity = convertBinaryToDecimal(counter, 0, 16) / 10.0;
-    float temperature = convertBinaryToDecimal(counter, 16, 32) / 10.0;
-    float checkSum = convertBinaryToDecimal(counter, 32, 40);
+    float humidity = this->convertBinaryToDecimal(counter, 0, 16) / 10.0;
+    float temperature = this->convertBinaryToDecimal(counter, 16, 32) / 10.0;
+    float checkSum = this->convertBinaryToDecimal(counter, 32, 40);
 
     return DHT22Measurement{humidity, temperature};
 }
