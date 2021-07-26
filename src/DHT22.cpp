@@ -43,16 +43,11 @@ DHT22Measurement DHT22::extractData(unsigned char (& bits)[40]) {
     return DHT22Measurement{humidity, temperature};
 }
 
-bool DHT22::isDHT22Low() {
-    return digitalRead(this->pin) == LOW;
+bool DHT22::isDHT22(char state) {
+    return digitalRead(this->pin) == state;
 }
 
-bool DHT22::isDHT22High() {
-    return digitalRead(this->pin) == HIGH;
-}
-
-//TODO: And a option to pass the delay directly here. of 2 seconds
-DHT22Measurement DHT22::measure() {
+void DHT22::sendStartSignal() {
 
     pinMode(this->pin, OUTPUT);
 
@@ -61,14 +56,22 @@ DHT22Measurement DHT22::measure() {
 
     digitalWrite(this->pin, HIGH);
     pinMode(this->pin, INPUT);
+}
 
-    //Wait until low
-    while (!this->isDHT22Low()) {
+void DHT22::waitStartSignalResponse() {
+
+    while (!this->isDHT22(LOW)) {
     }
 
-    //Wait until high
-    while (!this->isDHT22High()) {
+    while (!this->isDHT22(HIGH)) {
     }
+}
+
+//TODO: And a option to pass the delay directly here. of 2 seconds
+DHT22Measurement DHT22::measure() {
+
+    this->sendStartSignal();
+    this->waitStartSignalResponse();
 
     unsigned char bits[40];
     unsigned char bitIndex = 0;
@@ -79,7 +82,7 @@ DHT22Measurement DHT22::measure() {
 
     while (true) {
 
-        if (this->isDHT22Low()) {
+        if (this->isDHT22(LOW)) {
 
             if (lastState == HIGH) {
 
@@ -100,7 +103,7 @@ DHT22Measurement DHT22::measure() {
             transferStarted = true;
         }
 
-        if (this->isDHT22High() && transferStarted) {
+        if (this->isDHT22(HIGH) && transferStarted) {
             stopWatchMicros.run();
             lastState = HIGH;
         }

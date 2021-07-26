@@ -23,14 +23,12 @@ private:
     DHT22Measurement extractData(unsigned char (& bits)[40]);
 
     /**
-     * @return If the DHT22 sensor c is providing low signal
+     * @return If the DHT22 sensor's line is HIGH/LOW
      */
-    bool isDHT22Low();
+    bool isDHT22(char state);
 
-    /**
-     * @return If the DHT22 sensor pin is providing high signal
-     */
-    bool isDHT22High();
+    void sendStartSignal();
+    void waitStartSignalResponse();
 
 public:
 
