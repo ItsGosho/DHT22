@@ -65,6 +65,9 @@ void DHT22::waitStartSignalResponse() {
 
     while (!this->isDHT22(HIGH)) {
     }
+
+    while (!this->isDHT22(LOW)) {
+    }
 }
 
 //TODO: And a option to pass the delay directly here. of 2 seconds
@@ -77,7 +80,6 @@ DHT22Measurement DHT22::measure() {
     unsigned char bitIndex = 0;
 
     int lastState = LOW;
-    bool transferStarted = false;
     StopWatchMicros stopWatchMicros;
 
     while (bitIndex < 40) {
@@ -100,10 +102,9 @@ DHT22Measurement DHT22::measure() {
             }
 
             lastState = LOW;
-            transferStarted = true;
         }
 
-        if (this->isDHT22(HIGH) && transferStarted) {
+        if (this->isDHT22(HIGH)) {
             stopWatchMicros.run();
             lastState = HIGH;
         }
