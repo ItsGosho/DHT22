@@ -31,19 +31,47 @@ long DHT22::convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startInde
     return convertedValue;
 }
 
+bool DHT22::isChecksumValid(unsigned char (& bits)[40]) {
+
+    int firstOctetSum = this->convertBinaryToDecimal(bits, 0, 8);
+    int secondOctetSum = this->convertBinaryToDecimal(bits, 8, 16);
+    int thirdOctetSum = this->convertBinaryToDecimal(bits, 16, 24);
+    int fourthOctetSum = this->convertBinaryToDecimal(bits, 24, 32);
+
+    int checksum = this->convertBinaryToDecimal(bits, 32, 40);
+
+   /* Serial.println(firstOctetSum);
+    Serial.println(secondOctetSum);
+    Serial.println(thirdOctetSum);
+    Serial.println(fourthOctetSum);
+    Serial.println(checksum);*/
 /*
- * TODO: Logc for the checksum and errors
+   Serial.println("");
+
+    for (int i = 0; i < 40; ++i) {
+        Serial.print(bits[i]);
+    }
+
+    Serial.println("");
+    Serial.println("-------------->");*/
+
+    return firstOctetSum + secondOctetSum + thirdOctetSum + fourthOctetSum == checksum;
+}
+
+/*
+ * TODO: Logic for the checksum and errors
  * */
 DHT22Measurement DHT22::extractData(unsigned char (& bits)[40]) {
 
     float humidity = this->convertBinaryToDecimal(bits, 0, 16) / 10.0;
-    float temperature = this->convertBinaryToDecimal(bits, 16, 32) / 10.0;
-    float checkSum = this->convertBinaryToDecimal(bits, 32, 40);
+    bool isTemperatureNegative = bits[16];
+    float temperature = this->convertBinaryToDecimal(bits, 17, 32) / 10.0;
+    bool isChecksumValid = this->isChecksumValid(bits);
 
-    return DHT22Measurement{humidity, temperature};
+    return DHT22Measurement{humidity, temperature, isTemperatureNegative, isChecksumValid};
 }
 
-bool DHT22::isDHT22(char state) {
+bool DHT22::isDHT22State(char state) {
     return digitalRead(this->pin) == state;
 }
 
@@ -60,13 +88,13 @@ void DHT22::sendStartSignal() {
 
 void DHT22::waitStartSignalResponse() {
 
-    while (!this->isDHT22(LOW)) {
+    while (!this->isDHT22State(LOW)) {
     }
 
-    while (!this->isDHT22(HIGH)) {
+    while (!this->isDHT22State(HIGH)) {
     }
 
-    while (!this->isDHT22(LOW)) {
+    while (!this->isDHT22State(LOW)) {
     }
 }
 
@@ -104,7 +132,7 @@ void DHT22::readData(unsigned char (& bits)[40]) {
 
         bool isBitReceived = dht22State == LOW && previousSignalState == HIGH;
 
-        if(isBitReceived) {
+        if (isBitReceived) {
             unsigned long highSignalLength = highSignalLengthWatch.stop();
 
             bits[bitIndex] = this->determinateBit(highSignalLength);
@@ -119,6 +147,7 @@ void DHT22::readData(unsigned char (& bits)[40]) {
     }
 }
 
+/*TODO: TIMEOUTS!!!*/
 //TODO: And a option to pass the delay directly here. of 2 seconds
 DHT22Measurement DHT22::measure() {
 

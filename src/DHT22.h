@@ -7,6 +7,8 @@
 struct DHT22Measurement {
     float humidity;
     float temperature;
+    bool isTemperatureNegative;
+    bool isChecksumValid;
 };
 
 class DHT22 {
@@ -22,16 +24,17 @@ private:
 
     DHT22Measurement extractData(unsigned char (& bits)[40]);
 
-    /**
-     * @return If the DHT22 sensor's line is HIGH/LOW
-     */
-    bool isDHT22(char state);
+    bool isDHT22State(char state);
 
     void sendStartSignal();
+
     void waitStartSignalResponse();
 
     void readData(unsigned char (& bits)[40]);
+
     char determinateBit(const unsigned long& signalLength);
+
+    bool isChecksumValid(unsigned char (& bits)[40]);
 
 public:
 

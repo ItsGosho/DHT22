@@ -16,6 +16,7 @@ void loop() {
     DHT22Measurement measurement = dht22.measure();
     Serial.println(measurement.humidity);
     Serial.println(measurement.temperature);
+    Serial.println(measurement.isChecksumValid);
     Serial.println("------------------------>");
     delay(2000);
 
