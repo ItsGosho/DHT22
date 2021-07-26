@@ -31,6 +31,9 @@ long DHT22::convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startInde
     return convertedValue;
 }
 
+/*
+ * TODO: Logc for the checksum and errors
+ * */
 DHT22Measurement DHT22::extractData(unsigned char (& bits)[40]) {
 
     float humidity = this->convertBinaryToDecimal(bits, 0, 16) / 10.0;
@@ -43,9 +46,6 @@ DHT22Measurement DHT22::extractData(unsigned char (& bits)[40]) {
 //TODO: And a option to pass the delay directly here. of 2 seconds
 DHT22Measurement DHT22::measure() {
 
-    unsigned char bits[40];
-    unsigned char bitIndex = 0;
-
     pinMode(this->pin, OUTPUT);
 
     digitalWrite(this->pin, LOW);
@@ -55,19 +55,14 @@ DHT22Measurement DHT22::measure() {
     pinMode(this->pin, INPUT);
 
 
-    while (true) {
-        bool isSensorPullLow = digitalRead(this->pin) == LOW;
-
-        if (isSensorPullLow)
-            break;
+    while (digitalRead(this->pin) != LOW) {
     }
 
-    while (true) {
-        bool isSensorPullHigh = digitalRead(this->pin) == HIGH;
-
-        if (isSensorPullHigh)
-            break;
+    while (digitalRead(this->pin) != HIGH) {
     }
+
+    unsigned char bits[40];
+    unsigned char bitIndex = 0;
 
     int lastState = LOW;
     bool transferStarted = false;
