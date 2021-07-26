@@ -83,33 +83,39 @@ char DHT22::determinateBit(const unsigned long& signalLength) {
     return -1;
 }
 
+/**
+ * Will loop until all of the 40 data bits are not received.
+ *
+ * Each loop will start recording the HIGH signal length and when the HIGH signal finishes eg: LOW signal is received
+ * it will take the duration of the HIGH signal and based on the sensor's documentation will determinate if the bit is 0 or 1
+ *
+ * @param bits The array, which will be filled with the result data bits
+ */
 void DHT22::readData(unsigned char (& bits)[40]) {
+
     unsigned char bitIndex = 0;
 
-    int lastSignalState = LOW;
-    StopWatchMicros stopWatchMicros;
+    int previousSignalState = LOW;
+    StopWatchMicros highSignalLengthWatch;
 
     while (bitIndex < 40) {
 
-        int signalState = digitalRead(this->pin);
+        int dht22State = digitalRead(this->pin);
 
-        if (signalState == LOW) {
+        bool isBitReceived = dht22State == LOW && previousSignalState == HIGH;
 
-            if (lastSignalState == HIGH) {
+        if(isBitReceived) {
+            unsigned long highSignalLength = highSignalLengthWatch.stop();
 
-                unsigned long highSignalLength = stopWatchMicros.stop();
-
-                bits[bitIndex] = this->determinateBit(highSignalLength);
-
-                bitIndex++;
-            }
+            bits[bitIndex] = this->determinateBit(highSignalLength);
+            bitIndex++;
         }
 
-        if (signalState == HIGH) {
-            stopWatchMicros.run();
+        if (dht22State == HIGH) {
+            highSignalLengthWatch.run();
         }
 
-        lastSignalState = signalState;
+        previousSignalState = dht22State;
     }
 }
 
