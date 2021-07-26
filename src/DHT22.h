@@ -2,6 +2,7 @@
 #define DHT22_DHT22_H
 
 #include <Arduino.h>
+#include <StopWatchMicros.h>
 
 struct DHT22Measurement {
     float humidity;

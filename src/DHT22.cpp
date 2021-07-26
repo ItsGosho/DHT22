@@ -4,40 +4,6 @@ DHT22::DHT22(short pin) : pin(pin) {
 
 }
 
-//TODO: Separate class
-class StopWatchMicroseconds {
-
-private:
-    const unsigned long UNSIGNED_LONG_MAX_VALUE = 4294967295;
-    unsigned long start;
-    unsigned long end;
-    bool isRunning;
-
-public:
-
-    void run() {
-
-        if (!this->isRunning) {
-            this->start = micros();
-            this->isRunning = true;
-        }
-    }
-
-    bool getIsRunning() const {
-        return this->isRunning;
-    }
-
-    unsigned long stop() {
-        this->end = micros();
-        this->isRunning = false;
-
-        if (this->start > this->end)
-            return (UNSIGNED_LONG_MAX_VALUE - this->start) + this->end;
-
-        return this->end - this->start;
-    }
-};
-
 bool isToleranced(unsigned long value, unsigned long expected, unsigned long tolerance) {
     return value == expected ||
            (value >= expected - tolerance && value <= expected + tolerance);
@@ -89,7 +55,7 @@ DHT22Measurement DHT22::measure() {
 
     int lastState = LOW;
     bool transferStarted = false;
-    StopWatchMicroseconds stopWatchMicroseconds;
+    StopWatchMicros stopWatchMicros;
     while (true) {
         bool isLow = digitalRead(this->pin) == LOW;
         bool isHigh = digitalRead(this->pin) == HIGH;
@@ -98,7 +64,7 @@ DHT22Measurement DHT22::measure() {
 
             if (lastState == HIGH) {
 
-                unsigned long value = stopWatchMicroseconds.stop();
+                unsigned long value = stopWatchMicros.stop();
                 if (isToleranced(value, 80, 20)) {
                     counter[counterIndexer] = 1;
                 } else if (isToleranced(value, 27, 20)) {
@@ -116,7 +82,7 @@ DHT22Measurement DHT22::measure() {
         }
 
         if (isHigh && transferStarted) {
-            stopWatchMicroseconds.run();
+            stopWatchMicros.run();
             lastState = HIGH;
         }
 
