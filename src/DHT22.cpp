@@ -15,13 +15,14 @@ bool DHT22::isValueValid(const unsigned long& value, const unsigned long& expect
 template<typename T, size_t S>
 long DHT22::convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startIndex, const long& endIndex) {
 
+
     long exponent = 0;
     long convertedValue = 0;
 
     for (int i = endIndex - 1; i >= startIndex; i--) {
 
         T binaryValue = binaryNumbers[i];
-        T decimalValue = binaryValue * (1 << exponent);
+        long decimalValue = binaryValue * (1 << exponent);
 
         convertedValue += decimalValue;
         exponent++;
@@ -30,11 +31,20 @@ long DHT22::convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startInde
     return convertedValue;
 }
 
+DHT22Measurement DHT22::extractData(unsigned char (& bits)[40]) {
+
+    float humidity = this->convertBinaryToDecimal(bits, 0, 16) / 10.0;
+    float temperature = this->convertBinaryToDecimal(bits, 16, 32) / 10.0;
+    float checkSum = this->convertBinaryToDecimal(bits, 32, 40);
+
+    return DHT22Measurement{humidity, temperature};
+}
+
 //TODO: And a option to pass the delay directly here. of 2 seconds
 DHT22Measurement DHT22::measure() {
 
-    unsigned long counter[40];
-    unsigned long counterIndexer = 0;
+    unsigned char bits[40];
+    unsigned char bitIndex = 0;
 
     pinMode(this->pin, OUTPUT);
 
@@ -72,15 +82,15 @@ DHT22Measurement DHT22::measure() {
 
                 unsigned long value = stopWatchMicros.stop();
                 if (this->isValueValid(value, 80, 20)) {
-                    counter[counterIndexer] = 1;
+                    bits[bitIndex] = 1;
                 } else if (this->isValueValid(value, 27, 20)) {
-                    counter[counterIndexer] = 0;
+                    bits[bitIndex] = 0;
                 } else {
                     //Unexpected error something like that :D
-                    counter[counterIndexer] = 5;
+                    bits[bitIndex] = 5;
                 }
 
-                counterIndexer++;
+                bitIndex++;
             }
 
             lastState = LOW;
@@ -92,13 +102,13 @@ DHT22Measurement DHT22::measure() {
             lastState = HIGH;
         }
 
-        if (counterIndexer >= 40)
+        if (bitIndex >= 40)
             break;
     }
 
-    float humidity = this->convertBinaryToDecimal(counter, 0, 16) / 10.0;
-    float temperature = this->convertBinaryToDecimal(counter, 16, 32) / 10.0;
-    float checkSum = this->convertBinaryToDecimal(counter, 32, 40);
+    float humidity = this->convertBinaryToDecimal(bits, 0, 16) / 10.0;
+    float temperature = this->convertBinaryToDecimal(bits, 16, 32) / 10.0;
+    float checkSum = this->convertBinaryToDecimal(bits, 32, 40);
 
     return DHT22Measurement{humidity, temperature};
 }

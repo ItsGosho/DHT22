@@ -19,6 +19,8 @@ private:
     template<typename T, size_t S>
     long convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startIndex, const long& endIndex);
 
+    DHT22Measurement extractData(unsigned char (& bits)[40]);
+
 public:
 
     DHT22(short pin);
