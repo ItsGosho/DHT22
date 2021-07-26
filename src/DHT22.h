@@ -31,6 +31,7 @@ private:
     void waitStartSignalResponse();
 
     void readData(unsigned char (& bits)[40]);
+    char determinateBit(const unsigned long& signalLength);
 
 public:
 

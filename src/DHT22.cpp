@@ -70,38 +70,46 @@ void DHT22::waitStartSignalResponse() {
     }
 }
 
+char DHT22::determinateBit(const unsigned long& signalLength) {
+
+    if (this->isValueValid(signalLength, 80, 20)) {
+        return 1;
+    }
+
+    if (this->isValueValid(signalLength, 27, 20)) {
+        return 0;
+    }
+
+    return -1;
+}
+
 void DHT22::readData(unsigned char (& bits)[40]) {
     unsigned char bitIndex = 0;
 
-    int lastState = LOW;
+    int lastSignalState = LOW;
     StopWatchMicros stopWatchMicros;
 
     while (bitIndex < 40) {
 
-        if (this->isDHT22(LOW)) {
+        int signalState = digitalRead(this->pin);
 
-            if (lastState == HIGH) {
+        if (signalState == LOW) {
+
+            if (lastSignalState == HIGH) {
 
                 unsigned long highSignalLength = stopWatchMicros.stop();
 
-                if (this->isValueValid(highSignalLength, 80, 20)) {
-                    bits[bitIndex] = 1;
-                }
-
-                if (this->isValueValid(highSignalLength, 27, 20)) {
-                    bits[bitIndex] = 0;
-                }
+                bits[bitIndex] = this->determinateBit(highSignalLength);
 
                 bitIndex++;
             }
-
-            lastState = LOW;
         }
 
-        if (this->isDHT22(HIGH)) {
+        if (signalState == HIGH) {
             stopWatchMicros.run();
-            lastState = HIGH;
         }
+
+        lastSignalState = signalState;
     }
 }
 
