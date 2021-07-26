@@ -75,14 +75,14 @@ DHT22Measurement DHT22::measure() {
 
             if (lastState == HIGH) {
 
-                unsigned long value = stopWatchMicros.stop();
-                if (this->isValueValid(value, 80, 20)) {
+                unsigned long highSignalLength = stopWatchMicros.stop();
+
+                if (this->isValueValid(highSignalLength, 80, 20)) {
                     bits[bitIndex] = 1;
-                } else if (this->isValueValid(value, 27, 20)) {
+                }
+
+                if (this->isValueValid(highSignalLength, 27, 20)) {
                     bits[bitIndex] = 0;
-                } else {
-                    //Unexpected error something like that :D
-                    bits[bitIndex] = 5;
                 }
 
                 bitIndex++;
