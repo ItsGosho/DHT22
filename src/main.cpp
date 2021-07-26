@@ -129,112 +129,20 @@ void loop() {
                 break;
         }
 
-        for (int i = 0; i < 40; ++i) {
-            Serial.print(counter[i]);
-            Serial.print(",");
-        }
-
-        Serial.println();
+        float humidity = convertBinaryToDecimal(counter, 0, 16) / 10.0;
+        float temperature = convertBinaryToDecimal(counter, 16, 32) / 10.0;
+        float checkSum = convertBinaryToDecimal(counter, 32, 40);
 
         Serial.println("Humidity:");
-        for (int i = 0; i < 16; i++) {
-            Serial.print(counter[i]);
-        }
-
-
-        float temperature = convertBinaryToDecimal(counter, 16, 32) / 10.0;
-
-        Serial.println("");
+        Serial.println(humidity);
         Serial.println("Temp:");
         Serial.println(temperature);
-        Serial.println("");
 
-        for (int i = 16; i < 32; ++i) {
-            Serial.print(counter[i]);
-        }
-
-        Serial.println("");
         Serial.println("Checksum:");
-        for (int i = 32; i < 40; i++) {
-            Serial.print(counter[i]);
-        }
+        Serial.println(checkSum);
 
-        oneTime = true;
+        delay(2000);
+        Serial.println("--------------------------->");
+        //oneTime = true;
     }
 }
-
-/*
- *
- * while (true) {
-            bool isSensorHigh = digitalRead(DHT22_PIN) == HIGH;
-            bool isSensorLow = digitalRead(DHT22_PIN) == LOW;
-
-            if (isSensorLow && !isSensorLowStarted) {
-                isSensorLowStarted = true;
-            }
-
-            if (isSensorLowStarted && isSensorHigh) {
-                microsecondsHigh++;
-                delayMicroseconds(1);
-            }
-
-            if (isSensorLow && isSensorHighStarted) {
-                dataBits[dataBitsIndexer] = microsecondsHigh <= 28 ? 0 : 1;
-                dataBitsIndexer++;
-                bool isSensorLowStarted = false;
-                bool isSensorHighStarted = false;
-                int microsecondsHigh = 0;
-            }
-
-            if (dataBitsIndexer == 39)
-                break;
-        }
- *
- * */
-
-/*
- *  //test
-
-        //Low response
-        elements[0] = digitalRead(DHT22_PIN);
-        delayMicroseconds(DHT22_PIN);
-
-        //High response
-        elements[1] = digitalRead(DHT22_PIN);
-        delayMicroseconds(80);
-
-        //bits
-
-        int indexCounter = 0;
-        bool compensate = false;
-        for (int i = 0; i < 40; i++) {
-            int firstDelay = 50;
-
-            if (compensate)
-                firstDelay = firstDelay - 1;
-
-            delayMicroseconds(firstDelay);
-
-            delayMicroseconds(29);
-            bool isLow = digitalRead(DHT22_PIN) == LOW;
-
-            if (isLow) {
-                elements[indexCounter] = 0;
-                compensate = true;
-            } else {
-                elements[indexCounter] = 1;
-                delayMicroseconds(41);
-                compensate = false;
-            }
-
-            indexCounter++;
-        }
-
-        oneTime = true;
-
-        for (int i = 0; i < 40; ++i) {
-            Serial.println(elements[i]);
-        }
- *
- *
- * */
