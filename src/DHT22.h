@@ -30,6 +30,8 @@ private:
     void sendStartSignal();
     void waitStartSignalResponse();
 
+    void readData(unsigned char (& bits)[40]);
+
 public:
 
     DHT22(short pin);

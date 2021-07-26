@@ -70,13 +70,7 @@ void DHT22::waitStartSignalResponse() {
     }
 }
 
-//TODO: And a option to pass the delay directly here. of 2 seconds
-DHT22Measurement DHT22::measure() {
-
-    this->sendStartSignal();
-    this->waitStartSignalResponse();
-
-    unsigned char bits[40];
+void DHT22::readData(unsigned char (& bits)[40]) {
     unsigned char bitIndex = 0;
 
     int lastState = LOW;
@@ -109,6 +103,16 @@ DHT22Measurement DHT22::measure() {
             lastState = HIGH;
         }
     }
+}
+
+//TODO: And a option to pass the delay directly here. of 2 seconds
+DHT22Measurement DHT22::measure() {
+
+    this->sendStartSignal();
+    this->waitStartSignalResponse();
+
+    unsigned char bits[40];
+    this->readData(bits);
 
     return this->extractData(bits);
 }
