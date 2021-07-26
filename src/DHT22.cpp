@@ -80,7 +80,7 @@ DHT22Measurement DHT22::measure() {
     bool transferStarted = false;
     StopWatchMicros stopWatchMicros;
 
-    while (true) {
+    while (bitIndex < 40) {
 
         if (this->isDHT22(LOW)) {
 
@@ -107,9 +107,6 @@ DHT22Measurement DHT22::measure() {
             stopWatchMicros.run();
             lastState = HIGH;
         }
-
-        if (bitIndex >= 40)
-            break;
     }
 
     return this->extractData(bits);
