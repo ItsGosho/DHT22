@@ -1,6 +1,6 @@
 #include "DHT22.h"
 
-DHT22::DHT22(short pin) : dht22Pin(pin) {
+DHT22::DHT22(const short& pin) : dht22Pin(pin) {
 
 }
 
@@ -78,7 +78,7 @@ DHT22Measurement DHT22::extractData(unsigned char (& bits)[40]) {
     return DHT22Measurement{humidity, temperature, isTemperatureNegative, isChecksumValid};
 }
 
-bool DHT22::isDHT22State(char state) {
+bool DHT22::isDHT22State(const char& state) {
     return digitalRead(this->dht22Pin) == state;
 }
 
@@ -101,7 +101,7 @@ void DHT22::sendStartSignal() {
  * @param timeoutUS The max time that the state has to gone
  * @return If there was a timeout.
  */
-bool DHT22::waitState(char expectedState, unsigned long timeoutUS) {
+bool DHT22::waitState(const char& expectedState, const unsigned long& timeoutUS) {
 
     unsigned long start = millis();
 
@@ -145,12 +145,12 @@ bool DHT22::readData(unsigned char (& bits)[40]) {
 
     while (bitIndex < 40) {
 
-        if(this->waitState(LOW, DHT22_READ_TIMEOUT_US))
+        if (this->waitState(LOW, DHT22_READ_TIMEOUT_US))
             return true;
 
         unsigned long highLengthStart = micros();
 
-        if(this->waitState(HIGH, DHT22_READ_TIMEOUT_US))
+        if (this->waitState(HIGH, DHT22_READ_TIMEOUT_US))
             return true;
 
         unsigned long highLengthEnd = micros();

@@ -26,7 +26,7 @@ private:
 
     DHT22Measurement extractData(unsigned char (& bits)[40]);
 
-    bool isDHT22State(char state);
+    bool isDHT22State(const char& state);
 
     void sendStartSignal();
 
@@ -36,11 +36,11 @@ private:
 
     bool isChecksumValid(unsigned char (& bits)[40]);
 
-    bool waitState(char expectedState, unsigned long timeoutUS);
+    bool waitState(const char& expectedState,const unsigned long& timeoutUS);
 
 public:
 
-    DHT22(short pin);
+    DHT22(const short& pin);
 
     DHT22Measurement measure();
 
