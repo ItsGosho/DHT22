@@ -19,8 +19,7 @@ struct DHT22Measurement {
 class DHT22 {
 
 private:
-    /*TODO: Rename to dht22Pin*/
-    short pin;
+    short dht22Pin;
 
     template<typename T, size_t S>
     long convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startIndex, const long& endIndex);

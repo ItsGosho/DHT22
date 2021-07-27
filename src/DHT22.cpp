@@ -1,6 +1,6 @@
 #include "DHT22.h"
 
-DHT22::DHT22(short pin) : pin(pin) {
+DHT22::DHT22(short pin) : dht22Pin(pin) {
 
 }
 
@@ -79,17 +79,17 @@ DHT22Measurement DHT22::extractData(unsigned char (& bits)[40]) {
 }
 
 bool DHT22::isDHT22State(char state) {
-    return digitalRead(this->pin) == state;
+    return digitalRead(this->dht22Pin) == state;
 }
 
 void DHT22::sendStartSignal() {
 
-    pinMode(this->pin, OUTPUT);
+    pinMode(this->dht22Pin, OUTPUT);
 
-    digitalWrite(this->pin, LOW);
+    digitalWrite(this->dht22Pin, LOW);
     delay(DHT22_DETECT_SIGNAL_TIME_MS);
 
-    pinMode(this->pin, INPUT);
+    pinMode(this->dht22Pin, INPUT);
     delayMicroseconds(40);
 }
 
