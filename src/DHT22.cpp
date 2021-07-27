@@ -67,7 +67,7 @@ void DHT22::sendStartSignal() {
     pinMode(this->pin, OUTPUT);
 
     digitalWrite(this->pin, LOW);
-    delay(18);
+    delay(DHT22_DETECT_SIGNAL_TIME_MS);
 
     pinMode(this->pin, INPUT);
     delayMicroseconds(40);

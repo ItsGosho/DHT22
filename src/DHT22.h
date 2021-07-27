@@ -6,6 +6,7 @@
 
 #define DHT22_RESPONSE_TIMEOUT_MS 100
 #define DHT22_READ_TIMEOUT_US 500
+#define DHT22_DETECT_SIGNAL_TIME_MS 10000
 
 struct DHT22Measurement {
     float humidity;
