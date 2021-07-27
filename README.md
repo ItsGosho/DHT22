@@ -4,7 +4,7 @@
 
 Library for the DHT22 Temperature & Humidity sensor
 
-## Simple Usage
+### Simple Usage
 
 1. Initialize the `DHT22` class with the pin as constructor argument
 2. Call the measure function, which will return you a `DHT22Measurement` object containing the
@@ -34,3 +34,16 @@ void loop() {
 
 }
 ```
+
+### Notes
+
+- When power is supplied to the sensor, don't send instruction to it for the first 1 second 
+to avoid unstable status
+- The minimum time between measurements must be at least 2 seconds for the DHT22
+- Place at least 4.7kOhm resistor between the DOUT & VCC Pin (Pull-up)
+- Place 100nF capacitor between GND and VDD for wave filtering
+
+AM2302/DHT22 Resources:
+- [Used Sensor](https://www.waveshare.com/dht22-temperature-humidity-sensor.htm)
+- [Data Sheet](https://cdn-shop.adafruit.com/datasheets/Digital+humidity+and+temperature+sensor+AM2302.pdf)
+- [Checksum Problem](https://stackoverflow.com/questions/68547020/dht22-sensors-checksum-not-valid/68547021?noredirect=1#comment121145477_68547021)
