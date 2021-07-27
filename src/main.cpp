@@ -13,7 +13,7 @@ DHT22 dht22(DHT22_PIN);
 
 void loop() {
 
-    DHT22Measurement measurement = dht22.measure(2000);
+    DHT22Measurement measurement = dht22.measure(2500);
     Serial.println(measurement.humidity);
     Serial.println(measurement.temperature);
     Serial.println(measurement.isChecksumValid);

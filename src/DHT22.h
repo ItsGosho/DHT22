@@ -36,8 +36,6 @@ private:
 
     bool readData(unsigned char (& bits)[40]);
 
-    char determinateBit(const unsigned long& signalLength);
-
     bool isChecksumValid(unsigned char (& bits)[40]);
 
 public:
