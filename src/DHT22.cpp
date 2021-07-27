@@ -73,25 +73,39 @@ void DHT22::sendStartSignal() {
     delayMicroseconds(40);
 }
 
-bool DHT22::waitStartSignalResponse() {
+/**
+ * Will block until the given LOW/HIGH state is present on the dht22 pin.
+ * If the LOW/HIGH state is present more than the timeout value, then a timeout will occur.
+ *
+ * @param expectedState LOW or HIGH
+ * @param timeoutUS The max time that the state has to gone
+ * @return If there was a timeout.
+ */
+bool DHT22::waitState(char expectedState, unsigned long timeoutUS) {
 
     unsigned long start = millis();
 
-    while (this->isDHT22State(LOW)) {
+    while (this->isDHT22State(expectedState)) {
 
-        if (millis() - start >= DHT22_RESPONSE_TIMEOUT_MS)
+        if (millis() - start >= timeoutUS)
             return true;
     }
 
-    unsigned long start2 = millis();
+    return false;
+}
 
-    while (this->isDHT22State(HIGH)) {
+/**
+ * Will wait for the start responses, which are high and then low.
+ *
+ * @return If there was a timeout
+ */
+bool DHT22::waitStartSignalResponse() {
 
-        if (millis() - start2 >= DHT22_RESPONSE_TIMEOUT_MS)
-            return true;
+    if (this->waitState(LOW, DHT22_RESPONSE_TIMEOUT_MS))
+        return true;
 
-    }
-
+    if (this->waitState(HIGH, DHT22_RESPONSE_TIMEOUT_MS))
+        return true;
 
     return false;
 }
@@ -111,20 +125,13 @@ bool DHT22::readData(unsigned char (& bits)[40]) {
 
     while (bitIndex < 40) {
 
-        unsigned long lowLengthStart = micros();
-
-        while (digitalRead(this->pin) == LOW) {
-            if (micros() - lowLengthStart >= DHT22_RESPONSE_TIMEOUT_MS)
-                return true;
-        }
+        if(this->waitState(LOW, DHT22_READ_TIMEOUT_US))
+            return true;
 
         unsigned long highLengthStart = micros();
 
-        while (digitalRead(this->pin) == HIGH) {
-
-            if (micros() - highLengthStart >= DHT22_RESPONSE_TIMEOUT_MS)
-                return true;
-        }
+        if(this->waitState(HIGH, DHT22_READ_TIMEOUT_US))
+            return true;
 
         unsigned long highLengthEnd = micros();
         unsigned long highSignalLength = highLengthEnd - highLengthStart;

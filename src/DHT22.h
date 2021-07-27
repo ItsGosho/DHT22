@@ -36,11 +36,14 @@ private:
 
     bool isChecksumValid(unsigned char (& bits)[40]);
 
+    bool waitState(char expectedState, unsigned long timeoutUS);
+
 public:
 
     DHT22(short pin);
 
     DHT22Measurement measure();
+
     DHT22Measurement measure(int delayMS);
 
 };
