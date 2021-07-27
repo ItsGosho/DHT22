@@ -1,15 +1,14 @@
 #include <Arduino.h>
 #include "DHT22.h"
 
-bool oneTime = false;
-
+#define BAUD_RATE 9600
 #define DHT22_PIN 10
 
-void setup() {
-    Serial.begin(9600);
-}
-
 DHT22 dht22(DHT22_PIN);
+
+void setup() {
+    Serial.begin(BAUD_RATE);
+}
 
 void loop() {
 
