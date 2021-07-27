@@ -40,21 +40,6 @@ bool DHT22::isChecksumValid(unsigned char (& bits)[40]) {
 
     int checksum = this->convertBinaryToDecimal(bits, 32, 40);
 
-   /* Serial.println(firstOctetSum);
-    Serial.println(secondOctetSum);
-    Serial.println(thirdOctetSum);
-    Serial.println(fourthOctetSum);
-    Serial.println(checksum);*/
-/*
-   Serial.println("");
-
-    for (int i = 0; i < 40; ++i) {
-        Serial.print(bits[i]);
-    }
-
-    Serial.println("");
-    Serial.println("-------------->");*/
-
     return firstOctetSum + secondOctetSum + thirdOctetSum + fourthOctetSum == checksum;
 }
 
@@ -158,4 +143,11 @@ DHT22Measurement DHT22::measure() {
     this->readData(bits);
 
     return this->extractData(bits);
+}
+
+DHT22Measurement DHT22::measure(int delayMS) {
+
+    delay(delayMS);
+
+    return this->measure();
 }

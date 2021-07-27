@@ -4,6 +4,8 @@
 #include <Arduino.h>
 #include <StopWatchMicros.h>
 
+#define DHT22_TIMEOUT_MS 10
+
 struct DHT22Measurement {
     float humidity;
     float temperature;
@@ -41,6 +43,7 @@ public:
     DHT22(short pin);
 
     DHT22Measurement measure();
+    DHT22Measurement measure(int delayMS);
 
 };
 
