@@ -87,20 +87,16 @@ bool DHT22::waitStartSignalResponse() {
 
     while (this->isDHT22State(LOW)) {
 
-        if (millis() - start >= DHT22_RESPONSE_TIMEOUT_MS) {
-            Serial.println("Timeout first low!");
+        if (millis() - start >= DHT22_RESPONSE_TIMEOUT_MS)
             return true;
-        }
     }
 
     unsigned long start2 = millis();
 
     while (this->isDHT22State(HIGH)) {
 
-        if (millis() - start2 >= DHT22_RESPONSE_TIMEOUT_MS) {
-            Serial.println("Timeout second high!");
+        if (millis() - start2 >= DHT22_RESPONSE_TIMEOUT_MS)
             return true;
-        }
 
     }
 
@@ -123,21 +119,25 @@ bool DHT22::readData(unsigned char (& bits)[40]) {
 
     for (uint8_t i = 40; i != 0; i--) {
 
+        unsigned lowLengthStart = micros();
+
         while (digitalRead(this->pin) == LOW) {
-
-        }
-
-        unsigned long start = micros();
-        while (digitalRead(this->pin) == HIGH) {
-            if (micros() - start >= DHT22_RESPONSE_TIMEOUT_MS) {
-                Serial.println("Timeout HIGH SIGNAL READ!");
+            if (micros() - lowLengthStart >= DHT22_RESPONSE_TIMEOUT_MS)
                 return true;
-            }
         }
 
-        unsigned long end = micros();
+        unsigned long highLengthStart = micros();
 
-        bits[bitIndex] = end - start > 45;
+        while (digitalRead(this->pin) == HIGH) {
+
+            if (micros() - highLengthStart >= DHT22_RESPONSE_TIMEOUT_MS)
+                return true;
+        }
+
+        unsigned long highLengthEnd = micros();
+        unsigned long highSignalLength = highLengthEnd - highLengthStart;
+
+        bits[bitIndex] = highSignalLength > 45;
         bitIndex++;
     }
 
@@ -145,7 +145,6 @@ bool DHT22::readData(unsigned char (& bits)[40]) {
 }
 
 
-/*TODO: TIMEOUTS!!!*/
 DHT22Measurement DHT22::measure() {
 
     this->sendStartSignal();
