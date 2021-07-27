@@ -109,9 +109,9 @@ bool DHT22::readData(unsigned char (& bits)[40]) {
 
     unsigned char bitIndex = 0;
 
-    for (uint8_t i = 40; i != 0; i--) {
+    while (bitIndex < 40) {
 
-        unsigned lowLengthStart = micros();
+        unsigned long lowLengthStart = micros();
 
         while (digitalRead(this->pin) == LOW) {
             if (micros() - lowLengthStart >= DHT22_RESPONSE_TIMEOUT_MS)
