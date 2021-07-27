@@ -19,15 +19,14 @@ struct DHT22Measurement {
 class DHT22 {
 
 private:
-    /*TODO: Rename to dht22Pin*/
-    short pin;
+    short dht22Pin;
 
     template<typename T, size_t S>
     long convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startIndex, const long& endIndex);
 
     DHT22Measurement extractData(unsigned char (& bits)[40]);
 
-    bool isDHT22State(char state);
+    bool isDHT22State(const char& state);
 
     void sendStartSignal();
 
@@ -37,11 +36,11 @@ private:
 
     bool isChecksumValid(unsigned char (& bits)[40]);
 
-    bool waitState(char expectedState, unsigned long timeoutUS);
+    bool waitState(const char& expectedState,const unsigned long& timeoutUS);
 
 public:
 
-    DHT22(short pin);
+    DHT22(const short& pin);
 
     DHT22Measurement measure();
 
