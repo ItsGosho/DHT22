@@ -1,0 +1,1 @@
+C:\Users\Gosho\.platformio\packages\toolchain-atmelavr\bin\avr-g++.exe  -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -Os -Wall -ffunction-sections -fdata-sections -flto -mmcu=atmega328p -g   CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj  -o Z_DUMMY_TARGET 
