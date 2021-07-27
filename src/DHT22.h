@@ -4,13 +4,15 @@
 #include <Arduino.h>
 #include <StopWatchMicros.h>
 
-#define DHT22_TIMEOUT_MS 10
+#define DHT22_RESPONSE_TIMEOUT_MS 100
+#define DHT22_READ_TIMEOUT_US 500
 
 struct DHT22Measurement {
     float humidity;
     float temperature;
     bool isTemperatureNegative;
     bool isChecksumValid;
+    bool isTimedOut;
 };
 
 class DHT22 {
@@ -30,9 +32,9 @@ private:
 
     void sendStartSignal();
 
-    void waitStartSignalResponse();
+    bool waitStartSignalResponse();
 
-    void readData(unsigned char (& bits)[40]);
+    bool readData(unsigned char (& bits)[40]);
 
     char determinateBit(const unsigned long& signalLength);
 

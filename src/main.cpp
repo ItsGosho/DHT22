@@ -17,6 +17,7 @@ void loop() {
     Serial.println(measurement.humidity);
     Serial.println(measurement.temperature);
     Serial.println(measurement.isChecksumValid);
+    Serial.println(measurement.isTimedOut);
     Serial.println("------------------------>");
 
 }

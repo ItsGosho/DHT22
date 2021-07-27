@@ -71,16 +71,41 @@ void DHT22::sendStartSignal() {
     pinMode(this->pin, INPUT);
 }
 
-void DHT22::waitStartSignalResponse() {
+bool DHT22::waitStartSignalResponse() {
+
+    unsigned long start = millis();
 
     while (!this->isDHT22State(LOW)) {
+
+        if (millis() - start >= DHT22_RESPONSE_TIMEOUT_MS) {
+            Serial.println("Timeout first low!");
+            return true;
+        }
     }
+
+    unsigned long start2 = millis();
 
     while (!this->isDHT22State(HIGH)) {
+
+        if (millis() - start2 >= DHT22_RESPONSE_TIMEOUT_MS) {
+            Serial.println("Timeout second high!");
+            return true;
+        }
+
     }
 
+    unsigned long start3 = millis();
+
     while (!this->isDHT22State(LOW)) {
+
+        if (millis() - start3 >= DHT22_RESPONSE_TIMEOUT_MS) {
+            Serial.println("Timeout third low!");
+            return true;
+        }
+
     }
+
+    return false;
 }
 
 char DHT22::determinateBit(const unsigned long& signalLength) {
@@ -103,19 +128,21 @@ char DHT22::determinateBit(const unsigned long& signalLength) {
  * it will take the duration of the HIGH signal and based on the sensor's documentation will determinate if the bit is 0 or 1
  *
  * @param bits The array, which will be filled with the result data bits
+ * @return If the reading has timed out
  */
-void DHT22::readData(unsigned char (& bits)[40]) {
+bool DHT22::readData(unsigned char (& bits)[40]) {
 
     unsigned char bitIndex = 0;
 
     int previousSignalState = LOW;
     StopWatchMicros highSignalLengthWatch;
+    StopWatchMicros sameSignalLengthWatch;
 
     while (bitIndex < 40) {
 
-        int dht22State = digitalRead(this->pin);
+        int currentSignalState = digitalRead(this->pin);
 
-        bool isBitReceived = dht22State == LOW && previousSignalState == HIGH;
+        bool isBitReceived = currentSignalState == LOW && previousSignalState == HIGH;
 
         if (isBitReceived) {
             unsigned long highSignalLength = highSignalLengthWatch.stop();
@@ -124,23 +151,50 @@ void DHT22::readData(unsigned char (& bits)[40]) {
             bitIndex++;
         }
 
-        if (dht22State == HIGH) {
+        if (currentSignalState == HIGH) {
             highSignalLengthWatch.run();
         }
 
-        previousSignalState = dht22State;
+        //Ot kolko vreme nqma promqna v signala
+        if(currentSignalState == previousSignalState) {
+            sameSignalLengthWatch.run();
+
+            unsigned long runTime = sameSignalLengthWatch.getTime();
+
+            if(runTime >= DHT22_READ_TIMEOUT_US) {
+                Serial.println("TIMEOUT:");
+                Serial.println(runTime);
+                return true;
+            }
+        }
+
+        if(currentSignalState != previousSignalState) {
+            sameSignalLengthWatch.stop();
+            sameSignalLengthWatch.reset();
+        }
+
+        previousSignalState = currentSignalState;
     }
+
+    return false;
 }
 
 /*TODO: TIMEOUTS!!!*/
-//TODO: And a option to pass the delay directly here. of 2 seconds
 DHT22Measurement DHT22::measure() {
 
     this->sendStartSignal();
-    this->waitStartSignalResponse();
+    bool isStartResponseTimedOut = this->waitStartSignalResponse();
+
+    if (isStartResponseTimedOut) {
+        return DHT22Measurement{0, 0, false, false, true};
+    }
 
     unsigned char bits[40];
-    this->readData(bits);
+    bool isReadingDataTimedOut = this->readData(bits);
+
+    if (isReadingDataTimedOut) {
+        return DHT22Measurement{0, 0, false, false, true};
+    }
 
     return this->extractData(bits);
 }

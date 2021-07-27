@@ -11,10 +11,21 @@ private:
     unsigned long end;
     bool isRunning;
 
+    unsigned long getTime(unsigned long end);
+
+public:
+    StopWatchMicros();
+
 public:
     void run();
+
     bool getIsRunning();
+
+    unsigned long getTime();
+
     unsigned long stop();
+
+    bool reset();
 };
 
 
