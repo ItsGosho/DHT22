@@ -4,14 +4,6 @@ DHT22::DHT22(short pin) : pin(pin) {
 
 }
 
-bool DHT22::isValueValid(const unsigned long& value, const unsigned long& expected, const unsigned long& deviation) {
-
-    unsigned long lowestPoint = expected - deviation;
-    unsigned long upperPoint = expected + deviation;
-
-    return value >= lowestPoint && value <= upperPoint;
-}
-
 template<typename T, size_t S>
 long DHT22::convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startIndex, const long& endIndex) {
 
