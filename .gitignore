@@ -34,5 +34,8 @@
 # CMake
 cmake-build-*/
 
+#Intellij
+.idea
+
 #Platformio
 .pio

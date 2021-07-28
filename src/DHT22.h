@@ -4,9 +4,9 @@
 #include <Arduino.h>
 #include <StopWatchMicros.h>
 
-#define DHT22_RESPONSE_TIMEOUT_US 100
-#define DHT22_READ_TIMEOUT_US 100
-#define DHT22_DETECT_SIGNAL_TIME_MS 10
+#define DEFAULT_DHT22_DETECT_SIGNAL_TIME_MS 10
+#define DEFAULT_DHT22_RESPONSE_TIMEOUT_US 100
+#define DEFAULT_DHT22_READ_TIMEOUT_US 100
 
 struct DHT22Measurement {
     float humidity;
@@ -19,7 +19,12 @@ struct DHT22Measurement {
 class DHT22 {
 
 private:
+
     short dht22Pin;
+
+    int detectSignalTimeMS;
+    int responseTimeoutUS;
+    int readTimeoutUS;
 
     template<typename T, size_t S>
     long convertBinaryToDecimal(T (& binaryNumbers)[S], const long& startIndex, const long& endIndex);
@@ -36,7 +41,7 @@ private:
 
     bool isChecksumValid(unsigned char (& bits)[40]);
 
-    bool waitState(const char& expectedState,const unsigned long& timeoutUS);
+    bool waitState(const char& expectedState, const unsigned long& timeoutUS);
 
 public:
 
@@ -44,8 +49,13 @@ public:
 
     DHT22Measurement measure();
 
-    DHT22Measurement measure(int delayMS);
+    DHT22Measurement measure(const int& delayMS);
 
+    void setDetectSignalTimeMs(const int& detectSignalTimeMS);
+
+    void setResponseTimeoutUs(const int& responseTimeoutUS);
+
+    void setReadTimeoutUs(const int& readTimeoutUs);
 };
 
 

@@ -1,7 +1,9 @@
 #include "DHT22.h"
 
 DHT22::DHT22(const short& pin) : dht22Pin(pin) {
-
+    this->detectSignalTimeMS = DEFAULT_DHT22_DETECT_SIGNAL_TIME_MS;
+    this->responseTimeoutUS = DEFAULT_DHT22_RESPONSE_TIMEOUT_US;
+    this->readTimeoutUS = DEFAULT_DHT22_READ_TIMEOUT_US;
 }
 
 /**
@@ -65,9 +67,6 @@ bool DHT22::isChecksumValid(unsigned char (& bits)[40]) {
     return sum == checksum;
 }
 
-/*
- * TODO: Logic for the checksum and errors
- * */
 DHT22Measurement DHT22::extractData(unsigned char (& bits)[40]) {
 
     float humidity = this->convertBinaryToDecimal(bits, 0, 15) / 10.0;
@@ -87,7 +86,7 @@ void DHT22::sendStartSignal() {
     pinMode(this->dht22Pin, OUTPUT);
 
     digitalWrite(this->dht22Pin, LOW);
-    delay(DHT22_DETECT_SIGNAL_TIME_MS);
+    delay(this->detectSignalTimeMS);
 
     pinMode(this->dht22Pin, INPUT);
     delayMicroseconds(40);
@@ -121,10 +120,10 @@ bool DHT22::waitState(const char& expectedState, const unsigned long& timeoutUS)
  */
 bool DHT22::waitStartSignalResponse() {
 
-    if (this->waitState(LOW, DHT22_RESPONSE_TIMEOUT_US))
+    if (this->waitState(LOW, this->responseTimeoutUS))
         return true;
 
-    if (this->waitState(HIGH, DHT22_RESPONSE_TIMEOUT_US))
+    if (this->waitState(HIGH, this->responseTimeoutUS))
         return true;
 
     return false;
@@ -145,12 +144,12 @@ bool DHT22::readData(unsigned char (& bits)[40]) {
 
     while (bitIndex < 40) {
 
-        if (this->waitState(LOW, DHT22_READ_TIMEOUT_US))
+        if (this->waitState(LOW, this->readTimeoutUS))
             return true;
 
         unsigned long highLengthStart = micros();
 
-        if (this->waitState(HIGH, DHT22_READ_TIMEOUT_US))
+        if (this->waitState(HIGH, this->readTimeoutUS))
             return true;
 
         unsigned long highLengthEnd = micros();
@@ -183,9 +182,21 @@ DHT22Measurement DHT22::measure() {
     return this->extractData(bits);
 }
 
-DHT22Measurement DHT22::measure(int delayMS) {
+DHT22Measurement DHT22::measure(const int& delayMS) {
 
     delay(delayMS);
 
     return this->measure();
+}
+
+void DHT22::setDetectSignalTimeMs(const int& detectSignalTimeMS) {
+    this->detectSignalTimeMS = detectSignalTimeMS;
+}
+
+void DHT22::setResponseTimeoutUs(const int& responseTimeoutUS) {
+    this->responseTimeoutUS = responseTimeoutUS;
+}
+
+void DHT22::setReadTimeoutUs(const int& readTimeoutUs) {
+    this->readTimeoutUS = readTimeoutUs;
 }
