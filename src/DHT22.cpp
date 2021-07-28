@@ -67,9 +67,6 @@ bool DHT22::isChecksumValid(unsigned char (& bits)[40]) {
     return sum == checksum;
 }
 
-/*
- * TODO: Logic for the checksum and errors
- * */
 DHT22Measurement DHT22::extractData(unsigned char (& bits)[40]) {
 
     float humidity = this->convertBinaryToDecimal(bits, 0, 15) / 10.0;
