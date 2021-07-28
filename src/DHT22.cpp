@@ -189,14 +189,36 @@ DHT22Measurement DHT22::measure(const int& delayMS) {
     return this->measure();
 }
 
+/**
+ * The amount of milliseconds, when the low signal at the start is sent to ensure the DHT22 will detect the MCU signals.
+ * By specification the minimal wait must be beyond at least between 1-10ms.
+ *
+ * The default one is 10 ms.
+ *
+ * @param detectSignalTimeMS The value for the low signal wait in milliseconds.
+ */
 void DHT22::setDetectSignalTimeMs(const int& detectSignalTimeMS) {
     this->detectSignalTimeMS = detectSignalTimeMS;
 }
 
+/**
+ * The maximum time in microseconds that the response has to arrive.
+ *
+ * The default one is 100 us.
+ *
+ * @param responseTimeoutUS The value in microseconds.
+ */
 void DHT22::setResponseTimeoutUs(const int& responseTimeoutUS) {
     this->responseTimeoutUS = responseTimeoutUS;
 }
 
+/**
+ * The maximum time in microseconds that each bit of the data has to arrive
+ *
+ * The default one is 100 us.
+ *
+ * @param readTimeoutUs The value in microseconds.
+ */
 void DHT22::setReadTimeoutUs(const int& readTimeoutUs) {
     this->readTimeoutUS = readTimeoutUs;
 }

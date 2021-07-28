@@ -2,7 +2,6 @@
 #define DHT22_DHT22_H
 
 #include <Arduino.h>
-#include <StopWatchMicros.h>
 
 #define DEFAULT_DHT22_DETECT_SIGNAL_TIME_MS 10
 #define DEFAULT_DHT22_RESPONSE_TIMEOUT_US 100
