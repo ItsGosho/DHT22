@@ -1,8 +1,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/ItsGosho/DHT22/blob/main/LICENSE)
 
-# DHT22
+# DHT22:
 
-Arduino Library for the DHT22 Temperature & Humidity sensor
+Arduino Library for the DHT22 Temperature & Humidity sensor.
 
 ##### Example:
 
@@ -46,7 +46,7 @@ The `src/main.cpp` contains the same example used here in the `README.md`
 
 The `lib/serialPrintF` is used only in the example in `src/main.cpp` it is not part of the two main files.
 
-##### Features
+##### Features:
 
 - Option to measure directly with delay without and with one directly specified in the measure
 - Option to retrieve the easily information about the errors
@@ -68,7 +68,7 @@ Initialization:
 
 `setResponseTimeoutUs(us)` which is optional configuration for the response timeout
 
-##### Notes
+##### Notes:
 
 - When power is supplied to the sensor, don't send instruction to it for the first 1 second 
 to avoid unstable status
