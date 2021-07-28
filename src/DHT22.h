@@ -49,7 +49,7 @@ public:
 
     DHT22Measurement measure();
 
-    DHT22Measurement measure(int delayMS);
+    DHT22Measurement measure(const int& delayMS);
 
     void setDetectSignalTimeMs(const int& detectSignalTimeMS);
 

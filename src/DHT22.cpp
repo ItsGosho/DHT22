@@ -185,7 +185,7 @@ DHT22Measurement DHT22::measure() {
     return this->extractData(bits);
 }
 
-DHT22Measurement DHT22::measure(int delayMS) {
+DHT22Measurement DHT22::measure(const int& delayMS) {
 
     delay(delayMS);
 
