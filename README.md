@@ -6,7 +6,7 @@ Arduino Library for the DHT22 Temperature & Humidity sensor.
 
 ##### Example:
 
-```
+```c++
 #include <Arduino.h>
 #include <SerialPrintF.h>
 #include "DHT22.h"
@@ -37,14 +37,14 @@ void loop() {
 }
 ```
 
-You only need the two main files `src/DHT22.cpp` & `src/DHT22.h`.
+You only need the two main files [`DHT22.cpp`](https://github.com/ItsGosho/DHT22/blob/main/src/DHT22.cpp) & [`DHT22.h`](https://github.com/ItsGosho/DHT22/blob/main/src/DHT22.h).
 
-The `src/StopWatchMicros.cpp` & `src/StopWatchMicros.h` were used in the previous versions of the library and 
+The [`StopWatchMicros.cpp`](https://github.com/ItsGosho/DHT22/blob/main/src/StopWatchMicros.cpp) & [`StopWatchMicros.h`](https://github.com/ItsGosho/DHT22/blob/main/src/StopWatchMicros.h) were used in the previous versions of the library and 
 are left intentionally for future references to such logic.
 
-The `src/main.cpp` contains the same example used here in the `README.md`
+The [`main.cpp`](https://github.com/ItsGosho/DHT22/blob/main/src/main.cpp) contains the same example used here in the [`README.md`](https://github.com/ItsGosho/DHT22/blob/main/README.md)
 
-The `lib/serialPrintF` is used only in the example in `src/main.cpp` it is not part of the two main files.
+The [`serialPrintF`](https://github.com/ItsGosho/DHT22/tree/main/lib/serialPrintF) is used only in the example in [`main.cpp`](https://github.com/ItsGosho/DHT22/blob/main/src/main.cpp) it is not part of the two main files.
 
 ##### Features:
 
@@ -61,7 +61,7 @@ Initialization:
 
 `measure(ms)` which will return a class containing the measurement values and a error ones, but also wait the
  given milliseconds before executing the measurement, which is ideal if you don't want to do it separately in the code
- 
+
 `setDetectSignalTimeMs(ms)` which is optional configuration for the wakeup delay
 
 `setReadTimeoutUs(us)` which is optional configuration for the read timeout
