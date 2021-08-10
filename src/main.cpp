@@ -19,9 +19,10 @@ void setup() {
 void loop() {
     DHT22Measurement measurement = dht22.measure(MINIMAL_MEASUREMENT_DELAY_MS);
 
-    serial_printf(Serial, "Humidity: %2f%%, Temperature %1f, Checksum: %s, Timed Out: %s\n",
+    serial_printf(Serial, "Humidity: %2f%%, Temperature %1f C, Temperature %1f F, Checksum: %s, Timed Out: %s\n",
                   measurement.humidity,
-                  measurement.temperature,
+                  measurement.temperatureCelsius,
+                  measurement.temperatureFahrenheit,
                   measurement.isChecksumValid ? "true": "false",
                   measurement.isTimedOut ? "true" : "false");
 
