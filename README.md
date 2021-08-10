@@ -4,6 +4,8 @@
 
 Arduino Library for the DHT22 Temperature & Humidity sensor.
 
+<img src="DHT22-Sensor.jpg" width="200px" height="200px"/>
+
 ##### Example:
 
 ```c++
@@ -71,7 +73,7 @@ Initialization:
 ##### Notes:
 
 - When power is supplied to the sensor, don't send instruction to it for the first 1 second 
-to avoid unstable status
+  to avoid unstable status
 - The minimum time between measurements must be at least 2 seconds for the DHT22
 - Place at least 4.7kOhm resistor between the DOUT & VCC Pin (Pull-up)
 - Place 100nF capacitor between GND and VDD for wave filtering
