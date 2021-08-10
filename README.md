@@ -52,6 +52,7 @@ The [`serialPrintF`](https://github.com/ItsGosho/DHT22/tree/main/lib/serialPrint
 
 - Option to measure directly with delay without and with one directly specified in the measure
 - Option to retrieve the easily information about the errors
+- Directly getting the temperature in both Fahrenheit & Celsius
 - Timeouts and the option to specify them
 - Documentation on most of the methods
 

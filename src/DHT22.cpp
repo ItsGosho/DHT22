@@ -71,10 +71,11 @@ DHT22Measurement DHT22::extractData(unsigned char (& bits)[40]) {
 
     float humidity = this->convertBinaryToDecimal(bits, 0, 15) / 10.0;
     bool isTemperatureNegative = bits[16];
-    float temperature = this->convertBinaryToDecimal(bits, 17, 31) / 10.0;
+    float temperatureCelsius = this->convertBinaryToDecimal(bits, 17, 31) / 10.0;
+    float temperatureFahrenheit = this->convertCelsiusToFahrenheit(temperatureCelsius);
     bool isChecksumValid = this->isChecksumValid(bits);
 
-    return DHT22Measurement{humidity, temperature, isTemperatureNegative, isChecksumValid};
+    return DHT22Measurement{humidity, temperatureCelsius, temperatureFahrenheit, isTemperatureNegative, isChecksumValid};
 }
 
 bool DHT22::isDHT22State(const char& state) {
@@ -169,14 +170,14 @@ DHT22Measurement DHT22::measure() {
     bool isStartResponseTimedOut = this->waitStartSignalResponse();
 
     if (isStartResponseTimedOut) {
-        return DHT22Measurement{0, 0, false, false, true};
+        return DHT22Measurement{0, 0, 0, false, false, true};
     }
 
     unsigned char bits[40];
     bool isReadingDataTimedOut = this->readData(bits);
 
     if (isReadingDataTimedOut) {
-        return DHT22Measurement{0, 0, false, false, true};
+        return DHT22Measurement{0, 0, 0, false, false, true};
     }
 
     return this->extractData(bits);
@@ -221,4 +222,14 @@ void DHT22::setResponseTimeoutUs(const int& responseTimeoutUS) {
  */
 void DHT22::setReadTimeoutUs(const int& readTimeoutUs) {
     this->readTimeoutUS = readTimeoutUs;
+}
+
+/**
+ * Will convert the given temperature in celsius to fahrenheit
+ *
+ * @param celsius The temperature to be converted
+ * @return The converted celsius temperature to fahrenheit
+ */
+float DHT22::convertCelsiusToFahrenheit(const float& celsius) {
+    return (1.8f * celsius) + 32;
 }

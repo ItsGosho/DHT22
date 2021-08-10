@@ -9,10 +9,13 @@
 
 struct DHT22Measurement {
     float humidity;
-    float temperature;
+    float temperatureCelsius;
+    float temperatureFahrenheit;
     bool isTemperatureNegative;
     bool isChecksumValid;
     bool isTimedOut;
+
+
 };
 
 class DHT22 {
@@ -41,6 +44,8 @@ private:
     bool isChecksumValid(unsigned char (& bits)[40]);
 
     bool waitState(const char& expectedState, const unsigned long& timeoutUS);
+
+    float convertCelsiusToFahrenheit(const float& celsius);
 
 public:
 
