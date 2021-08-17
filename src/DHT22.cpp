@@ -98,16 +98,16 @@ void DHT22::sendStartSignal() {
  * If the LOW/HIGH state is present more than the timeout value, then a timeout will occur.
  *
  * @param expectedState LOW or HIGH
- * @param timeoutUS The max time that the state has to gone
+ * @param timeoutUS The max time that the state has to gone in millis
  * @return If there was a timeout.
  */
-bool DHT22::waitState(const char& expectedState, const unsigned long& timeoutUS) {
+bool DHT22::waitState(const char& expectedState, const unsigned long& timeoutMS) {
 
     unsigned long start = millis();
 
     while (this->isDHT22State(expectedState)) {
 
-        if (millis() - start >= timeoutUS)
+        if (millis() - start >= timeoutMS)
             return true;
     }
 

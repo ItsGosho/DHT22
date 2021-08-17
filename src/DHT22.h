@@ -43,7 +43,7 @@ private:
 
     bool isChecksumValid(unsigned char (& bits)[40]);
 
-    bool waitState(const char& expectedState, const unsigned long& timeoutUS);
+    bool waitState(const char& expectedState, const unsigned long& timeoutMS);
 
     float convertCelsiusToFahrenheit(const float& celsius);
 
